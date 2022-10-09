@@ -1,0 +1,24 @@
+import React from 'react';
+
+const InputField = ({
+  type,
+  value,
+  placeholder,
+  onChange,
+  errorMessage
+})=>{
+  return(
+    <React.Fragment> //div태그 생략, 더 생략하면 <>도 가능.
+      <input
+        style={{borderColor: 'red'}}
+        type={type}
+        value={value}
+        placeholder={placeholder{
+        onChange={onChange}
+     /><br />
+     <div style={{color: 'red'}}>{errorMessage}</div>
+   </React.Fragment> //상술, 더 생략하면 </>도 가능.
+  );
+};
+
+export default InputField;
