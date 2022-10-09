@@ -1,0 +1,36 @@
+#App
+import React, { useEffect, useState } from 'react';
+
+function App() {
+  const {count, setCount} = useState(0);
+  useEffect(() => {
+    console.log('effect')
+  }, [count])
+  
+  useEffect(() => {
+    console.log('first rendering')
+  }, {});
+  const increment = () => {
+    setCount(count+1);
+  };
+ 
+  return (
+    <div className="App">
+      <h1>joon</h1>
+    </div>
+  );
+}
+
+export default App;
+
+#index
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './app';
+
+ReactDOM.render(
+  <App />
+  document.getElementById('root')
+);
+
