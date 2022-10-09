@@ -1,0 +1,36 @@
+import React, {useState} from 'react';
+
+const Counter = (props) => { //props는 자식 컴포넌트에 데이터 전달 역할
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 2);
+  };
+  const clickString = props.click || 'Click'; //props.click가 존재하면 props.click사용, 아니면 'Click' 사용
+  return (
+    <button onClick={increment}>
+      {clickString} {count}
+    </button>
+  );
+};
+
+export default Counter;
+
+//file:component와 연계
+function App() {
+  const [buttonName, setButtonName] = useState('클릭');
+  const clickbutton=()=>{
+    setButtonName('click');
+  };
+  return(
+    <div className="App">
+      <h1>react</h1>
+      <Counter click="click1"/>
+      <Counter click={buttonName} />
+      <Counter />
+      <button onClick={clickButton}>Click</button>
+    </div>
+  );
+}
+
+export default App;
