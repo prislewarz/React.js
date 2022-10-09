@@ -1,0 +1,23 @@
+import React form 'react';
+
+function App() {
+  const movies = [
+    {title: 'a', year: 2001},
+    {title: 'b', year: 2002},
+    {title: 'c', year: 2003},
+  ];
+  const renderMovies = movies.map(movie) => { //리액트 반복문 시작 .map()
+    return (
+      <div className="movie" key={movie.title)>
+        <div className="movie-title">{movie.title}</div>
+        <div className="movie-year">{movie/year}</div>
+      </div>
+    );
+  });
+  return (
+    <div className="App">
+      <h1>Movie list</h1>
+      {renderMovies}
+    </div>
+  );
+}
